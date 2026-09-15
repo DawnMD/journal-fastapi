@@ -3,7 +3,10 @@ from sqlalchemy.orm import Session
 
 from app.settings import settings
 
-engine = create_engine(settings.DATABASE_URL, echo=True)
+engine = create_engine(
+    settings.DATABASE_URL,
+    pool_pre_ping=True,
+)
 
 
 def get_db():
