@@ -16,5 +16,5 @@ dependencies = [
 [tool.vercel]
 entrypoint = "app.main:app"
 
-[tool.vercel.scripts]
-build = "alembic upgrade head"
+# [tool.vercel.scripts]
+# build = "alembic upgrade head"
