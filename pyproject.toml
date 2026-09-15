@@ -11,10 +11,12 @@ dependencies = [
     "alembic>=1.20.0",
     "clerk-backend-api>=7.0.0",
     "fastapi[standard]>=0.141.1",
+    "psycopg2>=2.9.13",
+    "sqlalchemy>=2.0.53",
 ]
 
 [tool.vercel]
 entrypoint = "app.main:app"
 
-# [tool.vercel.scripts]
-# build = "alembic upgrade head"
+[tool.vercel.scripts]
+build = "alembic upgrade head"
