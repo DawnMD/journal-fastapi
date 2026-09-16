@@ -1,8 +1,11 @@
 from fastapi import FastAPI
 
 from app.auth import CurrentUser
+from app.routers import main_journal
 
 app = FastAPI()
+
+app.include_router(main_journal.router)
 
 
 @app.get("/me")
