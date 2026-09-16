@@ -72,20 +72,18 @@ class Journal(Base):
     )
 
     trash: Mapped[bool] = mapped_column(
-        Boolean,
-        server_default=false(),
+        Boolean, default=False, server_default=false(), init=False
     )
 
     created_at: Mapped[datetime] = mapped_column(
-        "createdAt",
-        DateTime,
-        server_default=func.now(),
+        "createdAt", DateTime, server_default=func.now(), init=False
     )
 
     notes: Mapped[list[Note]] = relationship(
         back_populates="journal",
         cascade="all, delete-orphan",
         passive_deletes=True,
+        init=False,
     )
 
     id: Mapped[str] = mapped_column(
